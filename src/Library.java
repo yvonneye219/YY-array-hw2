@@ -1,28 +1,43 @@
-import java.sql.SQLOutput;
+import java.util.Random;
 
 public class Library {
 
-    public String owner = "Mx. Bradford";
+    public String owner = "Yvonne Ye";
     public Book[] allBooks;
+
     public static void main(String[] args) {
-        //TODO: Make an instance of the main class
+        Library myLib = new Library();
     }
 
-    public Library(){
+    public Library() {
+        System.out.println("Welcome to " + owner + "'s library!!!!!");
 
-        System.out.println("Welcome to "+ owner + "'s library!!!!!");
-        //TODO: Give the array allBooks a size of 10
+        allBooks = new Book[10];
 
-        //TODO: Fill the array allBooks with reviews with random ratings from 0 to 10 inclusive
+        Random r = new Random();
 
-        //TODO: print all the ratings in the array allBooks
-        
-        //TODO: Call the method averageRating
+        for (int i = 0; i < allBooks.length; i++) {
+            int randRating = r.nextInt(11);
+            allBooks[i] = new Book(randRating);
+        }
 
+        for (Book b : allBooks) {
+            b.print();
+        }
+
+        averageRating();
     }
 
-    public void averageRating(){
-        //TODO: calculate the average rating from the array allBooks and print it
+    // Step 12: Calculate and print average rating
+    public void averageRating() {
+        int sum = 0;
 
+        for (Book b : allBooks) {
+            sum += b.getRating();
+        }
+
+        double average = (double) sum / allBooks.length;
+
+        System.out.println("Average rating of all books = " + average);
     }
 }

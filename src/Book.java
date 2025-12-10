@@ -1,26 +1,43 @@
-import java.sql.SQLOutput;
-
 public class Book {
-    
-    public int rating;
-    public String title;
-    public String author;
-    
-    public Book(int pRating){
-        title = "Grandmaster of Demonic Cultivation";
-        author = "MO Xiang Tong Xiu";
-        // TODO: set the instance variable to the parameter
 
+    private int rating;
+    private String title;
+    private String author;
+
+    public Book(int pRating) {
+        title = "Journey Under the Midnight Sun";
+        author = "Higashino Keigo";
+        this.rating = pRating;
     }
 
-    public void print(){
-        System.out.println("title: " + title);
-        System.out.println("author: " + author);
-        //TODO: use System.out to print the values of the
-        //      instance varibles so the user can see the review
-
-
+    public int getRating() {
+        return rating;
     }
 
-    
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void print() {
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("Rating: " + rating);
+        System.out.println("************");
+    }
 }
